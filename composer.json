@@ -1,7 +1,7 @@
 {
-	"name": "yard/skeleton-package",
+	"name": "yard/acf-registrar",
 	"type": "package",
-	"description": ":package_description",
+	"description": "Acorn package to register ACF groups",
 	"license": "MIT",
 	"config": {
 		"sort-packages": true,
@@ -27,12 +27,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Yard\\SkeletonPackage\\": "src/"
+			"Yard\\Acf\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Yard\\SkeletonPackage\\Tests\\": "tests/"
+			"Yard\\Acf\\Tests\\": "tests/"
 		}
 	},
 	"scripts": {
@@ -52,10 +52,10 @@
 	"extra": {
 		"acorn": {
 			"providers": [
-				"Yard\\SkeletonPackage\\SkeletonPackageServiceProvider"
+				"Yard\\Acf\\AcfServiceProvider"
 			],
 			"aliases": {
-				"Example": "Yard\\SkeletonPackage\\Facades\\Example"
+				"Acf": "Yard\\Acf\\Facades\\Acf"
 			}
 		}
 	}
