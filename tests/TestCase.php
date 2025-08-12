@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Yard\Acf\Tests;
+namespace Yard\Acf\Registrar\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -32,7 +32,7 @@ class TestCase extends Orchestra
 	protected function getPackageProviders($app)
 	{
 		return [
-			'Yard\Acf\AcfServiceProvider',
+			'Yard\Acf\Registrar\AcfServiceProvider',
 		];
 	}
 }
