@@ -6,7 +6,6 @@
 [![Code Coverage Badge](https://github.com/yardinternet/acf-registrar/blob/badges/coverage.svg)](https://github.com/yardinternet/acf-registrar/actions/workflows/badges.yml)
 [![Lines of Code Badge](https://github.com/yardinternet/acf-registrar/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/acf-registrar/actions/workflows/badges.yml)
 
-
 ## Requirements
 
 - [Sage](https://github.com/roots/sage) >= 10.0
