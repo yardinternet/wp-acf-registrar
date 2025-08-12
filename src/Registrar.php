@@ -29,6 +29,12 @@ class Registrar
 				'fields' => $fieldGroup->getFields(),
 				'location' => $fieldGroup->getLocation(),
 				'title' => $fieldGroup->getTitle(),
+				'menu_order' => $fieldGroup->getMenuOrder(),
+				'position' => $fieldGroup->getPosition(),
+				'style' => $fieldGroup->getStyle(),
+				'label_placement' => $fieldGroup->getLabelPlacement(),
+				'instruction_placement' => $fieldGroup->getInstructionPlacement(),
+				'hide_on_screen' => $fieldGroup->getHideOnScreen(),
 			];
 
 			register_extended_field_group($settings);
