@@ -46,6 +46,7 @@ wp acorn vendor:publish --provider="Yard\Acf\Registrar\AcfServiceProvider"
 
 Extend `Yard\Acf\Registar\FieldGroup` to define a field group.
 Add the class to `config/acf-registrar` in the `field_groups` key.
+See [Extended ACF](https://github.com/vinkla/extended-acf) for documentation about registering fields.
 
 ```php
 <?php
