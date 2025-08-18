@@ -6,8 +6,6 @@
 [![Code Coverage Badge](https://github.com/yardinternet/acf-registrar/blob/badges/coverage.svg)](https://github.com/yardinternet/acf-registrar/actions/workflows/badges.yml)
 [![Lines of Code Badge](https://github.com/yardinternet/acf-registrar/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/acf-registrar/actions/workflows/badges.yml)
 
-
-
 ## Requirements
 
 - [Sage](https://github.com/roots/sage) >= 10.0
@@ -41,19 +39,48 @@ To install this package using Composer, follow these steps:
 You can publish the config file with:
 
 ```shell
-wp acorn vendor:publish --provider="Yard\Acf\AcfServiceProvider"
+wp acorn vendor:publish --provider="Yard\Acf\Registrar\AcfServiceProvider"
 ```
 
 ## Usage
 
-From a Blade template:
+Extend `Yard\Acf\Registar\FieldGroup` to define a field group.
+Add the class to `config/acf-registrar` in the `field_groups` key.
+See [Extended ACF](https://github.com/vinkla/extended-acf) for documentation about registering fields.
 
-```blade
-@include('acf-registrar::acf')
-```
+```php
+<?php
 
-From WP-CLI:
+declare(strict_types=1);
 
-```shell
-wp acorn acf
+namespace App\FieldGroups;
+
+use Extended\ACF\Fields\Text;
+use Extended\ACF\Location;
+use Yard\Acf\Registrar\FieldGroup;
+
+class Person extends FieldGroup
+{
+    public function getTitle(): string
+    {
+        return 'Instellingen Persoon';
+    }
+
+    public function getFields(): array
+    {
+        return [
+            Text::make('Naam', 'name')
+                ->instructions('De naam van de persoon.')
+                ->required(true)
+                ->placeholder('Voer de naam in'),
+        ];
+    }
+
+    public function getLocation(): array
+    {
+        return [
+            Location::where('post_type', '==', 'person'),
+        ];
+    }
+}
 ```
