@@ -33,13 +33,13 @@ abstract class FieldGroup
 	public function getLabelPlacement(): string
 	{
 		// 'top' or 'left'
-		return 'top';
+		return 'left';
 	}
 
 	public function getInstructionPlacement(): string
 	{
 		// 'label' or 'field'
-		return 'label';
+		return 'field';
 	}
 
 	/** @return array<string> */
