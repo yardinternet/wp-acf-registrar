@@ -7,3 +7,5 @@ parameters:
     paths:
         - src
     tmpDir: build/phpstan
+    scanFiles:
+    	- vendor/php-stubs/acf-pro-stubs/acf-pro-stubs.php
