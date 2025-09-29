@@ -6,4 +6,8 @@ return [
 	'field_groups' => [
 		//Example::class,
 	],
+	'forms' =>
+	[
+		//Example::class
+	],
 ];
