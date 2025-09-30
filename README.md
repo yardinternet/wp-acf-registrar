@@ -42,7 +42,7 @@ You can publish the config file with:
 wp acorn vendor:publish --provider="Yard\Acf\Registrar\AcfServiceProvider"
 ```
 
-## Usage
+## FieldGroup Usage
 
 Extend `Yard\Acf\Registar\FieldGroup` to define a field group.
 Add the class to `config/acf-registrar` in the `field_groups` key.
@@ -82,5 +82,40 @@ class Person extends FieldGroup
             Location::where('post_type', '==', 'person'),
         ];
     }
+}
+```
+
+## Forms Usage
+
+Extend `Yard\Acf\Registrar\Forms` to define a field group.
+Add the class to `config/acf-registrar` under the `forms` key.
+See [Extended ACF](https://github.com/vinkla/extended-acf) for documentation about registering fields.
+
+`getId()` is required to define the form id, additional methods can be used to overwrite the given defaults.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Forms
+
+use Yard\Acf\Registrar\Form;
+
+class Person extends Form
+{
+    public function getId(): string
+    {
+        return 'form-id'
+    }
+
+    public function getFields(): array
+    {
+        return [
+            Person::SOME_FIELD,
+            Person::MORE_FIELDS
+        ];
+}
+
 }
 ```
