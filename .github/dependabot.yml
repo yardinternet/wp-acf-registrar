@@ -14,7 +14,7 @@ updates:
         patterns:
           - "*"
     commit-message:
-      prefix: "(chore)"
+      prefix: "chore"
 
   # Maintain dependencies for npm
   # - package-ecosystem: "npm"
@@ -39,5 +39,5 @@ updates:
         patterns:
           - "*"
     commit-message:
-      prefix: "(chore)"
+      prefix: "chore"
     versioning-strategy: lockfile-only
