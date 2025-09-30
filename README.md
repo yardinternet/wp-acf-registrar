@@ -87,7 +87,7 @@ class Person extends FieldGroup
 
 ## Forms Usage
 
-Extend `Yard\Acf\Registrar\Forms` to define a field group.
+Extend `Yard\Acf\Registrar\Forms` to define a front-end form.
 Add the class to `config/acf-registrar` under the `forms` key.
 See [Extended ACF](https://github.com/vinkla/extended-acf) for documentation about registering fields.
 
