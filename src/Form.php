@@ -33,7 +33,6 @@ abstract class Form
 		return false;
 	}
 
-
 	public function getPostTitle(): bool
 	{
 		return false;
