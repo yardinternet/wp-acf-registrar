@@ -11,6 +11,7 @@ class Registrar
 	public function __construct(protected Application $app)
 	{
 		add_action('acf/init', $this->registerFieldGroups(...));
+		add_action('acf/init', $this->registerForms(...));
 	}
 
 	public function registerFieldGroups(): void
@@ -62,7 +63,7 @@ class Registrar
 				'post_title' => $form->getPostTitle(),
 				'post_content' => $form->getPostContent(),
 				'form' => $form->getForm(),
-				'form_attributes' => $form->getFormAtrributes(),
+				'form_attributes' => $form->getFormAttributes(),
 				'return' => $form->getReturn(),
 				'html_before_fields' => $form->getHtmlBeforeFields(),
 				'html_after_fields' => $form->getHtmlAfterFields(),

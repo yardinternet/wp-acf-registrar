@@ -6,21 +6,33 @@ namespace Yard\Acf\Registrar;
 
 abstract class Form
 {
-	abstract public function getPostId(): int|string;
+	/** @returns string */
+	abstract public function getId(): string;
 
-	/** @return array<string> */
-	abstract public function getNewPost(): array;
-
-	/** @return array<string> */
-	abstract public function getFieldGroups(): array;
-
-	/** @return array<string> */
-	abstract public function getFields(): array;
-
-	public function getId(): string
+	public function getPostId(): int|string|false
 	{
-		return 'acf-form';
+		return false;
 	}
+
+	/** @return array<string>|false
+	 *	 @see https://developer.wordpress.org/reference/functions/wp_insert_post/ */
+	public function getNewPost(): array|false
+	{
+		return false;
+	}
+
+	/** @return array<string>|false */
+	public function getFieldGroups(): array|false
+	{
+		return false;
+	}
+
+	/** @return array<string>|false */
+	public function getFields(): array|false
+	{
+		return false;
+	}
+
 
 	public function getPostTitle(): bool
 	{
@@ -38,14 +50,14 @@ abstract class Form
 	}
 
 	/** @return array<string> */
-	public function getFormAtrributes(): array
+	public function getFormAttributes(): array
 	{
 		return [];
 	}
 
 	public function getReturn(): string
 	{
-		return '';
+		return add_query_arg('updated', 'true', acf_get_current_url());
 	}
 
 	public function getHtmlBeforeFields(): string
