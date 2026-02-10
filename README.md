@@ -149,6 +149,7 @@ class PersonOptions extends OptionPage
 
 }
 ```
+
 Option pages require the registration of 1 or more fieldgroups that are linked to the option page via:
 
 ```php
