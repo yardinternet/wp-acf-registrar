@@ -114,7 +114,7 @@ class Person extends Form
             Person::SOME_FIELD,
             Person::MORE_FIELDS
         ];
-}
+    }
 
 }
 ```
@@ -145,7 +145,18 @@ class PersonOptions extends OptionPage
     public function getCapability(): string
     {
         return 'edit_posts';
-}
+    }
 
 }
+```
+Option pages require the registration of 1 or more fieldgroups that are linked to the option page via:
+
+```php
+<?php
+public function getLocation(): array
+    {
+        return [
+            Location::where('option_page', '==', 'acf-options-option-page-example'),
+        ];
+    }
 ```
