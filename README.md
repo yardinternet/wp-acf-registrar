@@ -1,10 +1,10 @@
 # acf-registrar
 
-[![Code Style](https://github.com/yardinternet/acf-registrar/actions/workflows/format-php.yml/badge.svg?no-cache)](https://github.com/yardinternet/acf-registrar/actions/workflows/format-php.yml)
-[![PHPStan](https://github.com/yardinternet/acf-registrar/actions/workflows/phpstan.yml/badge.svg?no-cache)](https://github.com/yardinternet/acf-registrar/actions/workflows/phpstan.yml)
-[![Tests](https://github.com/yardinternet/acf-registrar/actions/workflows/run-tests.yml/badge.svg?no-cache)](https://github.com/yardinternet/acf-registrar/actions/workflows/run-tests.yml)
-[![Code Coverage Badge](https://github.com/yardinternet/acf-registrar/blob/badges/coverage.svg)](https://github.com/yardinternet/acf-registrar/actions/workflows/badges.yml)
-[![Lines of Code Badge](https://github.com/yardinternet/acf-registrar/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/acf-registrar/actions/workflows/badges.yml)
+[![Code Style](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/format-php.yml/badge.svg?no-cache)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/format-php.yml)
+[![PHPStan](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/phpstan.yml/badge.svg?no-cache)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/phpstan.yml)
+[![Tests](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/run-tests.yml/badge.svg?no-cache)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/run-tests.yml)
+[![Code Coverage Badge](https://github.com/yardinternet/wp-acf-registrar/blob/badges/coverage.svg)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/badges.yml)
+[![Lines of Code Badge](https://github.com/yardinternet/wp-acf-registrar/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/badges.yml)
 
 ## Requirements
 
@@ -20,7 +20,7 @@ To install this package using Composer, follow these steps:
     ```json
     {
       "type": "vcs",
-      "url": "git@github.com:yardinternet/acf-registrar.git"
+      "url": "git@github.com:yardinternet/wp-acf-registrar.git"
     }
     ```
 
