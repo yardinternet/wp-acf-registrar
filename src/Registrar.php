@@ -87,7 +87,7 @@ class Registrar
 
 	public function registerOptionPage(): void
 	{
-		$optionPages = config('acf-registrar.option_page', []);
+		$optionPages = config('acf-registrar.option_pages', []);
 
 		foreach ($optionPages as $optionPage) {
 			if (! is_a($optionPage, OptionPage::class, true)) {

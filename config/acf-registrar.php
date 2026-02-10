@@ -10,7 +10,7 @@ return [
 	[
 		//Example::class
 	],
-	'option_page' =>
+	'option_pages' =>
 	[
 		//Example::class
 	],

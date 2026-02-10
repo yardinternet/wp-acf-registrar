@@ -118,3 +118,34 @@ class Person extends Form
 
 }
 ```
+
+## Option page Usage
+
+Extend `Yard\Acf\Registrar\OptionPage` to define a option page.
+Add the class to `config/acf-registrar` under the `option_pages` key.
+
+`getPageTitle()` is required to define the option page dashboard name and page title, additional methods can be used to overwrite the given defaults.
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\OptionPage
+
+use Yard\Acf\Registrar\OptionPage;
+
+class PersonOptions extends OptionPage
+{
+    public function getPageTitle(): string
+    {
+        return 'Option page example'
+    }
+
+    public function getCapability(): string
+    {
+        return 'edit_posts';
+}
+
+}
+```
