@@ -12,6 +12,7 @@ class Registrar
 	{
 		add_action('acf/init', $this->registerFieldGroups(...));
 		add_action('acf/init', $this->registerForms(...));
+		add_action('acf/init', $this->registerOptionPage(...));
 	}
 
 	public function registerFieldGroups(): void
@@ -81,6 +82,37 @@ class Registrar
 			];
 
 			acf_register_form($settings);
+		}
+	}
+
+	public function registerOptionPage(): void
+	{
+		$optionPages = config('acf-registrar.option_page', []);
+
+		foreach ($optionPages as $optionPage) {
+			if (! is_a($optionPage, OptionPage::class, true)) {
+				throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $optionPage, OptionPage::class));
+			}
+
+			/** @var OptionPage $optionPage */
+			$optionPage = new $optionPage();
+
+			$settings = [
+				'page_title' => $optionPage->getPageTitle(),
+				'menu_title' => $optionPage->getMenuTitle(),
+				'menu_slug' => $optionPage->getMenuSlug(),
+				'post_id' => $optionPage->getPostId(),
+				'capability' => $optionPage->getCapability(),
+				'parent_slug' => $optionPage->getParentSlug(),
+				'position' => $optionPage->getPosition(),
+				'icon_url' => $optionPage->getIconUrl(),
+				'redirect' => $optionPage->getRedirect(),
+				'autoload' => $optionPage->getAutoload(),
+				'update_button' => $optionPage->getUpdateButton(),
+				'updated_message' => $optionPage->getUpdatedMessage(),
+			];
+
+			acf_add_options_page($settings);
 		}
 	}
 }

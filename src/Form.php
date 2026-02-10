@@ -6,7 +6,7 @@ namespace Yard\Acf\Registrar;
 
 abstract class Form
 {
-	/** @returns string */
+	/** @return string */
 	abstract public function getId(): string;
 
 	public function getPostId(): int|string|false

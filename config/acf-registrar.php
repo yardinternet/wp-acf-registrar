@@ -10,4 +10,8 @@ return [
 	[
 		//Example::class
 	],
+	'option_page' =>
+	[
+		//Example::class
+	],
 ];
