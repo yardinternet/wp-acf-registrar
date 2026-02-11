@@ -97,7 +97,7 @@ Add the class to `config/acf-registrar` under the `forms` key.
 
 declare(strict_types=1);
 
-namespace App\Forms
+namespace App\Forms;
 
 use Yard\Acf\Registrar\Form;
 
@@ -105,7 +105,7 @@ class Person extends Form
 {
     public function getId(): string
     {
-        return 'form-id'
+        return 'form-id';
     }
 
     public function getFields(): array
@@ -131,7 +131,7 @@ Add the class to `config/acf-registrar` under the `option_pages` key.
 
 declare(strict_types=1);
 
-namespace App\OptionPage
+namespace App\OptionPages;
 
 use Yard\Acf\Registrar\OptionPage;
 
@@ -139,7 +139,7 @@ class PersonOptions extends OptionPage
 {
     public function getPageTitle(): string
     {
-        return 'Option page example'
+        return 'Option page example';
     }
 
     public function getCapability(): string

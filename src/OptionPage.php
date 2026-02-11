@@ -20,7 +20,7 @@ abstract class OptionPage
 
 	public function getMenuSlug(): string
 	{
-		return 'acf-options' . acf_slugify($this->getMenuTitle());
+		return 'acf-options-' . acf_slugify($this->getMenuTitle());
 	}
 
 	public function getCapability(): string
