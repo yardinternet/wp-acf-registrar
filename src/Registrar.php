@@ -4,29 +4,80 @@ declare(strict_types=1);
 
 namespace Yard\Acf\Registrar;
 
-use Illuminate\Contracts\Foundation\Application;
-
 class Registrar
 {
-	public function __construct(protected Application $app)
+	/** @var array<class-string<FieldGroup>> */
+	private array $fieldGroups = [];
+
+	/** @var array<class-string<Form>> */
+	private array $forms = [];
+
+	/** @var array<class-string<OptionPage>> */
+	private array $optionPages = [];
+
+	public function __construct(){}
+
+	public function register(): void
 	{
 		add_action('acf/init', $this->registerFieldGroups(...));
 		add_action('acf/init', $this->registerForms(...));
 		add_action('acf/init', $this->registerOptionPage(...));
 	}
 
+	/** @param array<class-string<FieldGroup>> $fieldGroups */
+	public function addFieldGroups(array $fieldGroups): void
+	{
+		foreach ($fieldGroups as $fieldGroup) {
+			$this->addFieldGroup($fieldGroup);
+		}
+	}
+
+	public function addFieldGroup(string $fieldGroup): void
+	{
+		if (! is_a($fieldGroup, FieldGroup::class, true)) {
+			throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $fieldGroup, FieldGroup::class));
+		}
+
+		$this->fieldGroups[] = $fieldGroup;
+	}
+
+	/** @param array<class-string<Form>> $forms */
+	public function addForms(array $forms): void
+	{
+		foreach ($forms as $form) {
+			$this->addForm($form);
+		}
+	}
+
+	public function addForm(string $form): void
+	{
+		if (! is_a($form, Form::class, true)) {
+			throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $form, Form::class));
+		}
+
+		$this->forms[] = $form;
+	}
+
+	/** @param array<class-string<OptionPage>> $optionPages */
+	public function addOptionPages(array $optionPages): void
+	{
+		foreach ($optionPages as $optionPage) {
+			$this->addOptionPage($optionPage);
+		}
+	}
+
+	public function addOptionPage(string $optionPage): void
+	{
+		if (! is_a($optionPage, OptionPage::class, true)) {
+			throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $optionPage, OptionPage::class));
+		}
+		$this->optionPages[] = $optionPage;
+	}
+
 	public function registerFieldGroups(): void
 	{
-		$fieldGroups = config('acf-registrar.field_groups', []);
-
-		foreach ($fieldGroups as $group) {
-			if (! is_a($group, FieldGroup::class, true)) {
-				throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $group, FieldGroup::class));
-			}
-
-			/** @var FieldGroup $fieldGroup */
+		foreach ($this->fieldGroups as $group) {
 			$fieldGroup = new $group();
-
 			$settings = [
 				'fields' => $fieldGroup->getFields(),
 				'location' => $fieldGroup->getLocation(),
@@ -45,16 +96,8 @@ class Registrar
 
 	public function registerForms(): void
 	{
-		$forms = config('acf-registrar.forms', []);
-
-		foreach ($forms as $form) {
-			if (! is_a($form, Form::class, true)) {
-				throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $form, Form::class));
-			}
-
-			/** @var Form $form */
+		foreach ($this->forms as $form) {
 			$form = new $form();
-
 			$settings = [
 				'id' => $form->getID(),
 				'post_id' => $form->getPostID(),
@@ -87,16 +130,8 @@ class Registrar
 
 	public function registerOptionPage(): void
 	{
-		$optionPages = config('acf-registrar.option_pages', []);
-
-		foreach ($optionPages as $optionPage) {
-			if (! is_a($optionPage, OptionPage::class, true)) {
-				throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $optionPage, OptionPage::class));
-			}
-
-			/** @var OptionPage $optionPage */
+		foreach ($this->optionPages as $optionPage) {
 			$optionPage = new $optionPage();
-
 			$settings = [
 				'page_title' => $optionPage->getPageTitle(),
 				'menu_title' => $optionPage->getMenuTitle(),

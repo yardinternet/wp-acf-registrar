@@ -6,41 +6,39 @@
 [![Code Coverage Badge](https://github.com/yardinternet/wp-acf-registrar/blob/badges/coverage.svg)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/badges.yml)
 [![Lines of Code Badge](https://github.com/yardinternet/wp-acf-registrar/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/badges.yml)
 
-## Requirements
-
-- [Sage](https://github.com/roots/sage) >= 10.0
-- [Acorn](https://github.com/roots/acorn) >= 4.0
-
 ## Installation
 
-To install this package using Composer, follow these steps:
-
-1. Add the following to the `repositories` section of your `composer.json`:
-
-    ```json
-    {
-      "type": "vcs",
-      "url": "git@github.com:yardinternet/wp-acf-registrar.git"
-    }
-    ```
-
-2. Install this package with Composer:
-
-    ```sh
-    composer require yard/acf-registrar
-    ```
-
-3. Run the Acorn WP-CLI command to discover this package:
-
-    ```shell
-    wp acorn package:discover
-    ```
-
-You can publish the config file with:
+This package can be installed using composer
 
 ```shell
-wp acorn vendor:publish --provider="Yard\Acf\Registrar\AcfServiceProvider"
+composer require yard/acf-registrar
 ```
+
+# Usage
+
+To use this package in a standard WordPress plugin, you can use the `Registrar` to register hooks.
+
+main file:
+
+```php
+/**
+ * Plugin Name: My Plugin
+ */
+
+require __DIR__ . '/vendor/autoload.php';
+
+$fieldGroups$ = [
+    \Plugin\FieldGroupClass::class,
+    \Plugin\AnotherFieldGroupClass::class,
+];
+
+$registrar = new \Yard\Acf\Registrar();
+$registrar->addFieldGroups($fieldGroups);
+$registrar->addForm(\Plugin\FormClass::class);
+$registrar->addOptionPage(\Plugin\OptionPageClass::class);
+$registrar->register();
+```
+
 
 ## FieldGroup Usage
 
