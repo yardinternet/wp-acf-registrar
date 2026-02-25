@@ -15,7 +15,9 @@ class Registrar
 	/** @var array<class-string<OptionPage>> */
 	private array $optionPages = [];
 
-	public function __construct(){}
+	public function __construct()
+	{
+	}
 
 	public function register(): void
 	{
