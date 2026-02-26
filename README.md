@@ -39,7 +39,6 @@ $registrar->addOptionPage(\Plugin\OptionPageClass::class);
 $registrar->register();
 ```
 
-
 ## FieldGroup Usage
 
 Extend `Yard\Acf\Registar\FieldGroup` to define a field group.
