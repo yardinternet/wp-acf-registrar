@@ -8,10 +8,10 @@ abstract class FieldGroup
 {
 	abstract public function getTitle(): string;
 
-	/** @return array<string, \Extended\ACF\Fields\Field> */
+	/** @return array<string|int , \Extended\ACF\Fields\Field> */
 	abstract public function getFields(): array;
 
-	/** @return array<string, \Extended\ACF\Location> */
+	/** @return array<string|int, \Extended\ACF\Location> */
 	abstract public function getLocation(): array;
 
 	public function getMenuOrder(): int
