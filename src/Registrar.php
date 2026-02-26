@@ -27,53 +27,65 @@ class Registrar
 	}
 
 	/** @param array<class-string<FieldGroup>> $fieldGroups */
-	public function addFieldGroups(array $fieldGroups): void
+	public function addFieldGroups(array $fieldGroups): self
 	{
 		foreach ($fieldGroups as $fieldGroup) {
 			$this->addFieldGroup($fieldGroup);
 		}
+
+		return $this;
 	}
 
-	public function addFieldGroup(string $fieldGroup): void
+	public function addFieldGroup(string $fieldGroup): self
 	{
 		if (! is_a($fieldGroup, FieldGroup::class, true)) {
 			throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $fieldGroup, FieldGroup::class));
 		}
 
 		$this->fieldGroups[] = $fieldGroup;
+
+		return $this;
 	}
 
 	/** @param array<class-string<Form>> $forms */
-	public function addForms(array $forms): void
+	public function addForms(array $forms): self
 	{
 		foreach ($forms as $form) {
 			$this->addForm($form);
 		}
+
+		return $this;
 	}
 
-	public function addForm(string $form): void
+	public function addForm(string $form): self
 	{
 		if (! is_a($form, Form::class, true)) {
 			throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $form, Form::class));
 		}
 
 		$this->forms[] = $form;
+
+		return $this;
 	}
 
 	/** @param array<class-string<OptionPage>> $optionPages */
-	public function addOptionPages(array $optionPages): void
+	public function addOptionPages(array $optionPages): self
 	{
 		foreach ($optionPages as $optionPage) {
 			$this->addOptionPage($optionPage);
 		}
+
+		return $this;
 	}
 
-	public function addOptionPage(string $optionPage): void
+	public function addOptionPage(string $optionPage): self
 	{
 		if (! is_a($optionPage, OptionPage::class, true)) {
 			throw new \RuntimeException(sprintf('The class "%s" must extend %s.', $optionPage, OptionPage::class));
 		}
 		$this->optionPages[] = $optionPage;
+
+		return $this;
 	}
 
 	public function registerFieldGroups(): void
