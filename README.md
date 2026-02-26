@@ -1,10 +1,14 @@
-# acf-registrar
+# ACF Registrar
 
 [![Code Style](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/format-php.yml/badge.svg?no-cache)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/format-php.yml)
 [![PHPStan](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/phpstan.yml/badge.svg?no-cache)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/phpstan.yml)
 [![Tests](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/run-tests.yml/badge.svg?no-cache)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/run-tests.yml)
-[![Code Coverage Badge](https://github.com/yardinternet/wp-acf-registrar/blob/badges/coverage.svg)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/badges.yml)
-[![Lines of Code Badge](https://github.com/yardinternet/wp-acf-registrar/blob/badges/lines-of-code.svg)](https://github.com/yardinternet/wp-acf-registrar/actions/workflows/badges.yml)
+
+## Features
+
+- [x] Register ACF Field groups
+- [x] Register ACF Forms
+- [x] Register ACF Option Pages
 
 ## Installation
 
