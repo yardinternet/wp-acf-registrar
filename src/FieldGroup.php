@@ -14,6 +14,11 @@ abstract class FieldGroup
 	/** @return array<string|int, \Extended\ACF\Location> */
 	abstract public function getLocation(): array;
 
+	public function getKey(): string
+	{
+		return '';
+	}
+
 	public function getMenuOrder(): int
 	{
 		return 0;

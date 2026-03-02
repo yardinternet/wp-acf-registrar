@@ -93,6 +93,7 @@ class Registrar
 		foreach ($this->fieldGroups as $group) {
 			$fieldGroup = new $group();
 			$settings = [
+				'key' => $fieldGroup->getKey(),
 				'fields' => $fieldGroup->getFields(),
 				'location' => $fieldGroup->getLocation(),
 				'title' => $fieldGroup->getTitle(),
