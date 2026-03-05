@@ -4,36 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d41288c4d0c56e4ff9e45d8ecb03ed23",
+    "content-hash": "18d3c6086791410ba4396672ebde6cd4",
     "packages": [
         {
             "name": "vinkla/extended-acf",
-            "version": "13.8.0",
+            "version": "14.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vinkla/extended-acf.git",
-                "reference": "4f879e42ec3aa3633287a84785f50f822dca16b9"
+                "reference": "0d8f9f93b3ac3b6e6ae2c8273218560f493dbc7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vinkla/extended-acf/zipball/4f879e42ec3aa3633287a84785f50f822dca16b9",
-                "reference": "4f879e42ec3aa3633287a84785f50f822dca16b9",
+                "url": "https://api.github.com/repos/vinkla/extended-acf/zipball/0d8f9f93b3ac3b6e6ae2c8273218560f493dbc7c",
+                "reference": "0d8f9f93b3ac3b6e6ae2c8273218560f493dbc7c",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^10.1",
-                "symfony/var-dumper": "^6.3"
+                "phpunit/phpunit": "^11.0 || ^12.0",
+                "symfony/var-dumper": "^7.0"
             },
             "suggest": {
-                "symfony/var-dumper": "Required to use the dump method (^6.3)."
+                "symfony/var-dumper": "Required to use the dump method (^7.0)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "13.8-dev"
+                    "dev-master": "14.7-dev"
                 }
             },
             "autoload": {
@@ -51,7 +51,7 @@
             "authors": [
                 {
                     "name": "Vincent Klaiber",
-                    "email": "hello@doubledip.se"
+                    "homepage": "https://github.com/vinkla"
                 }
             ],
             "description": "Register advanced custom fields with object-oriented PHP",
@@ -65,9 +65,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vinkla/extended-acf/issues",
-                "source": "https://github.com/vinkla/extended-acf/tree/13.8.0"
+                "source": "https://github.com/vinkla/extended-acf/tree/14.6.2"
             },
-            "time": "2023-10-02T07:32:52+00:00"
+            "time": "2026-01-22T13:29:00+00:00"
         }
     ],
     "packages-dev": [

@@ -15,7 +15,7 @@
 	},
 	"require": {
 		"php": ">=8.2",
-		"vinkla/extended-acf": "^13.8"
+		"vinkla/extended-acf": "^14"
 	},
 	"require-dev": {
 		"10up/wp_mock": "^0.4.2",
