@@ -80,13 +80,14 @@ abstract class Form
 
 	public function getLabelPlacement(): string
 	{
-		return 'left';
+		// 'top' or 'left'
+		return 'top';
 	}
 
 	public function getInstructionPlacement(): string
 	{
 		// 'label' or 'field'
-		return 'field';
+		return 'label';
 	}
 
 	public function getFieldEl(): string
